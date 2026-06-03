@@ -1,0 +1,43 @@
+#Name: Ian Julander
+#Class: INFO 1200
+#Section: X01
+#Professor: Dr. Anas AlSobeh
+#Date: 06/03/2026
+#Assignment #: M03 Project P1
+#By submitting this assignment, I declare that the source code contained in this assignment was written 
+#solely by me, unless specifically provided in the assignment. I attest that no part of this assignment, 
+#in whole or in part, was directly created by Generative AI, unless explicitly stated in the assignment 
+#instructions, nor obtained from a subscription service. I understand that copying any source code, 
+#in whole or in part, unless specifically provided in the assignment, constitutes cheating, and that 
+#I will receive a zero on this project if I am found in violation of this policy.
+
+
+# Display app name
+print("Ian Julander Registration App")
+print()
+
+# prompt user for first name
+firstName = input("First name: ")
+
+# prompt user for last name
+lastName = input("Last name: ")
+
+# prompt user for birth year
+birthYear = int(input("Birth year: "))
+
+# blank line for formatting
+print()
+
+# welcome message
+print("Welcome, " + firstName + " " + lastName + "!")
+
+# blank line for formatting
+print()
+
+print("Your registration is complete.")
+
+# create temporary user password from user info
+tempPassword = firstName + "*" + str(birthYear)
+
+# display temporary password to user
+print("Your temporary password is: " + tempPassword)

@@ -1,0 +1,49 @@
+#Name: Ian Julander
+#Class: INFO 1200
+#Section: X01
+#Professor: Dr. Anas AlSobeh
+#Date: 06/03/2026
+#Assignment #: M03 Project P2
+#By submitting this assignment, I declare that the source code contained in this assignment was written 
+#solely by me, unless specifically provided in the assignment. I attest that no part of this assignment, 
+#in whole or in part, was directly created by Generative AI, unless explicitly stated in the assignment 
+#instructions, nor obtained from a subscription service. I understand that copying any source code, 
+#in whole or in part, unless specifically provided in the assignment, constitutes cheating, and that 
+#I will receive a zero on this project if I am found in violation of this policy.
+
+
+# Display app name
+print("Ian Julander's Pay Check Calculator App")
+print()
+
+# get user input for hours worked
+hoursWorked = float(input("Hours worked: "))
+
+# get user input for pay rate
+payRate = float(input("Hourly pay rate: "))
+
+print()
+
+# calculate gross pay
+grossPay = hoursWorked * payRate
+
+# display gross pay
+print("Gross pay: $" + str(round(grossPay, 2)))
+
+# create variable for tax rate
+taxRate = 18
+
+# display tax rate
+print("Tax rate: " + str(taxRate) + "%")
+
+# create variable for tax amount and calculate
+taxAmount = grossPay * (taxRate / 100)
+
+# display tax amount
+print("Tax amount: $" + str(round(taxAmount, 2)))
+
+# create variable for take home pay and calculate
+takeHomePay = grossPay - taxAmount
+
+# display take home pay
+print("Take home pay: $" + str(round(takeHomePay, 2)))
