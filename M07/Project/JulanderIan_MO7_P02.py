@@ -14,7 +14,6 @@
 # import tkinter for gui
 import tkinter as tk
 from tkinter import ttk
-import math
 import random
 
 # Dice rolling program. Must have 7 controls

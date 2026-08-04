@@ -13,9 +13,8 @@
 
 # imports tkinter for gui
 import tkinter as tk
-# imports ttk and messagebox for gui
+# imports ttk for gui
 from tkinter import ttk
-from tkinter import messagebox
 # imports math for calculations
 import math
 
@@ -34,8 +33,11 @@ frame = ttk.Frame(root, padding="10 10 12 12")
 frame.pack(fill="both", expand=True)
 
 # variable to store values of a, b, and c
+# var a
 a = tk.StringVar()
+# var b
 b = tk.StringVar()
+# var c
 c = tk.StringVar()
 
 
