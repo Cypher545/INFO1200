@@ -61,7 +61,7 @@ def main():
         # create writer object
         writer = csv.writer(output_file)
         # write header row for readability
-        writer.writerow(["Miles Driven", "Gallons Used", "Miles Per Gallon"])
+        writer.writerow(["", "", ""])
         # write trips to file
         writer.writerows(trips)
 
