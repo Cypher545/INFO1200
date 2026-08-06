@@ -4,7 +4,7 @@ import csv
 import sys
 
 # declare filename constant
-FILENAME = "movies.csv"
+FILENAME = "movies_test.csv"
 
 # define exit function
 def exit_program():
@@ -32,9 +32,10 @@ def read_movies():
     # file not found error
     except FileNotFoundError as e:
         # print error if file not found
-        print(f"Could not find {FILENAME} file.")
+        #print(f"Could not find {FILENAME} file.")
         # call exit program function
-        exit_program()
+        #exit_program()
+        return movies
     # catch other exceptions
     except Exception as e:
         # display the exception type to user
@@ -46,13 +47,21 @@ def read_movies():
 def write_movies(movies):
     # start exception handling
     try:
+        ## test raise OSerror
+        #raise BlockingIOError("test the OSerror exception")
         # try to open file to write
         with open(FILENAME, "w", newline="") as file:
             # create writer object
             writer = csv.writer(file)
             # write rows to movies
             writer.writerows(movies)
-    # catch exceptions
+    # catch OS errors
+    except OSError as e:
+        # print exception message
+        print(type(e), e)
+        # call exit function
+        exit_program()
+    # catch generic exceptions
     except Exception as e:
         # print exception message to user
         print(type(e), e)
@@ -72,20 +81,27 @@ def list_movies(movies):
 def add_movie(movies):
     # assigns name variable
     name = input("Name: ")
+    # while loop
     while True:
+        # start exception handling
         try:
-            # assigns year variable
+            # assigns year variable and checks if int
             year = int(input("Year: "))
+        # if not int raise value error exception
         except ValueError:
+            # print error message
             print("Year must be an integer. Try again.")
+            # continue
             continue
+        # checks of year is too low
         if year <= 0:
+            # print error message if so
             print("Year must be greater than 0. Try again.")
+            # continue
             continue
+        # else break
         else:
             break
-        
-
     # assigns variables to movie list
     movie = [name, year]
     # appends to the list
